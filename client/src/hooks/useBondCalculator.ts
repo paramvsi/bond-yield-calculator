@@ -12,8 +12,9 @@ export function useBondCalculator() {
     setError(null);
 
     try {
+      const baseUrl = import.meta.env.VITE_API_URL || '';
       const { data } = await axios.post<ApiResponse<BondResult>>(
-        '/api/bond/calculate',
+        `${baseUrl}/api/bond/calculate`,
         input,
       );
 
