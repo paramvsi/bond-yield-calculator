@@ -1,0 +1,12 @@
+{
+  "name": "bond-yield-calculator",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm dev:server & pnpm dev:client",
+    "dev:server": "pnpm --filter @bond/server dev",
+    "dev:client": "pnpm --filter @bond/client dev",
+    "build": "pnpm --filter @bond/shared build && pnpm --filter @bond/server build && pnpm --filter @bond/client build",
+    "test": "pnpm --filter @bond/server test",
+    "clean": "rm -rf shared/dist server/dist client/dist node_modules shared/node_modules server/node_modules client/node_modules"
+  }
+}
